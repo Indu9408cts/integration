@@ -1,0 +1,412 @@
+body {
+    color: #000000;
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+}
+
+table {
+    border-collapse: collapse;
+    clear: left;
+    margin-left: 0;
+    margin-right: auto;
+}
+
+td {
+    border-collapse: collapse;
+    margin: 2px;
+    padding: 2px;
+    white-space: nowrap;
+    font: normal 14px arial, helvetica, sans-serif;
+    vertical-align: middle;
+}
+
+td.dark-data {
+    border-bottom: 1px solid #B3B9AB;
+    color: #494B43;
+    text-align: left;
+    background: #ffffff;
+    width: 375px;
+    font-size:14px;
+    padding-top: 5px;
+    white-space: normal;
+    max-width: 375px;
+}
+
+td.dark-data-red {
+    color: #800000;
+    font-weight: bold;
+    text-align: left;
+    white-space: nowrap;
+    background: #c2cfda;
+}
+
+th {
+    border-collapse: collapse;
+    margin: 2px;
+    padding: 2px;
+    font: bold 14px arial, helvetica, sans-serif;
+}
+
+th.dark-label {
+    padding: 7px 0px 7px;
+    border-bottom: 1px solid #B3B9AB;
+    color: #494B43;
+    text-align: left;
+    white-space: nowrap;
+    width: 170px;
+    background: #ffffff;
+    font-size: 14px;
+}
+
+th.label {
+    padding: 7px 0px 7px;
+    border-bottom: 1px solid #B3B9AB;
+    text-align: left;
+    width: 170px;
+    white-space: nowrap;
+    color: #494B43;
+    background: #ffffff;
+    font-size: 14px;
+}
+
+th.label.completionRow {
+    padding-top: 40px;
+}
+
+td.data {
+    border-bottom: 1px solid #B3B9AB;
+    text-align: left;
+    white-space: nowrap;
+    color: #494B43;
+    background: #ffffff;
+    font-size: 14px;
+    padding-top: 5px;
+}
+
+td.data-red {
+    border-bottom: 1px solid #B3B9AB;
+    color: #800000;
+    font-weight: bold;
+    text-align: left;
+    white-space: nowrap;
+    background: #ffffff;
+    vertical-align: bottom;
+    padding-bottom: 10px;
+}
+
+td.data.completionRow {
+    padding-top: 40px;
+}
+
+tbody:before {
+    line-height: 0.3em;
+    color: white;
+    display: block;
+}
+
+.accInvisible {
+    overflow: hidden;
+    height: 0px;
+    width: 0;
+    position: absolute;
+}
+
+h2 {
+    font-size: inherit;
+    -webkit-margin-after: 0px;
+    -webkit-margin-before: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.coursetable {
+    margin-bottom: 10px;
+    margin-left: 20px;
+    margin-top: 2px;
+}
+
+.coursedata {
+    color: #000000;
+    text-align: center;
+    width: 90px;
+    vertical-align: middle;
+}
+
+.courseheader {
+    border-collapse: collapse;
+    color: #494B43;
+    margin: 2px;
+    padding: 6px 2px 8px 2px;
+    text-align: left;
+    font: bold 14px arial, helvetica, sans-serif;
+}
+
+.courserow {
+    color: #000000;
+    border-bottom: 1px #B3B9AB solid;
+}
+
+.lessondata {
+    text-align: center;
+    width: 90px;
+    border-top: 1px #B3B9AB solid;
+    border-bottom: 1px #B3B9AB solid;
+    vertical-align: middle;
+}
+
+.lessonheader {
+    border-collapse: collapse;
+    margin: 2px;
+    padding: 6px 2px 8px 6px;
+    text-align: left;
+    color: #494B43;
+    border-bottom: 1px #B3B9AB solid;
+    border-top: 1px #B3B9Ab solid;
+    font: bold 14px arial, helvetica, sans-serif;
+}
+
+.lessonrow {
+    color: #000000;
+}
+
+.nametable {
+    margin-bottom: 0px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.headerdiv {
+    position:relative;
+    height: 80px;
+    width:400px;
+}
+.pagetitle {
+    color: #494B43;
+    position: relative;
+    left: 20px;
+    top: 80px;
+    font: 25px arial, helvetica, sans-serif;
+    background: transparent;
+    text-align: left;
+    border-bottom: #B3B9AB 2px solid;
+    width: 675px;
+    padding-bottom: 2px;
+}
+
+.scoredata {
+    border-collapse: collapse;
+    margin: 2px;
+    padding: 2px;
+    text-align: center;
+    width: 90px;
+    font: normal 14px arial, helvetica, sans-serif;
+    background: #ffffff;
+    vertical-align: middle;
+}
+
+.borderbottom {
+    border-bottom: 1px solid #B3B9AB;
+}
+
+.scoreheader {
+    border-collapse: collapse;
+    color: #494B43;
+    margin: 2px;
+    padding: 2px 2px 1px 1px;
+    text-align: center;
+    width: 90px;
+    font: bold 16px arial, helvetica, sans-serif;
+    border-bottom: #B3B9AB 2px solid;
+    padding-top: 40px;
+}
+
+.scoretable {
+    margin-left: 20px;
+    margin-top: 0px;
+}
+
+.radiusleft {
+    -webkit-border-radius: 0px 0px 0px 0px;
+    -moz-border-radius: 0px 0px 0px 0px;
+    border-radius: 0px 0px 0px 0px;
+    -ms-border-radius:0px 0px 0px 0px;
+}
+
+.radiusright {
+    -webkit-border-radius: 0px 0px 0px 0px;
+    -moz-border-radius: 0px 0px 0px 0px;
+    border-radius: 0px 0px 0px 0px;
+    -ms-border-radius: 0px 0px 0px 0px;
+}
+
+.skillsoft-logo {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    float: left;
+}
+
+.printicon {
+    left: 655px;
+    padding-right: 5px;
+}
+.printpage-btn:before {
+    content: url("../../../images/svg/btn_print.svg");
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    margin-left: -35px;
+}
+.printpage-btn:focus:before, .printpage-btn:hover:before {
+    content: url("../../../images/svg/btn_print_hover.svg");
+}
+.printpage-btn {
+    float: right;
+    background-color: #247B97;
+    border-radius: 5px;
+    -ms-border-radius: 5px;
+    height: 30px;
+    color: white;
+    text-decoration: none;
+    padding-bottom: 0px;
+    padding-right: 20px;
+    font-size: 14px;
+    font-family: arial;
+    padding-left: 40px;
+    padding-top: 0px;
+    line-height: 32px;
+}
+.printpage-btn.header {
+    margin-top: 55px;
+}
+.printpage-btn:focus, .printpage-btn:hover {
+    text-decoration: underline;
+    background-color: #494B43;
+    color: #BBD25E;
+}
+
+.titlecolumn {
+    width: 450px;
+    color: #494B43;
+    font: bold 16px arial, helvetica, sans-serif;
+    border-bottom: #B3B9AB 2px solid;
+    padding-top: 40px;
+}
+
+.topicheader {
+    border-collapse: collapse;
+    color: #494B43;
+    margin: 2px;
+    padding: 5px 0px 0px 30px;
+    text-align: left;
+    font: normal 14px arial, helvetica, sans-serif;
+    background: #ffffff;
+}
+
+.topicrow {
+    color: #000000;
+    background: #ffffff;
+}
+
+footer {
+    clear: left;
+    color: #494B43;
+    padding-top: 20px;
+    text-align: center;
+    text-indent: 10px;
+    width: 640px;
+    font: bold 73% arial, helvetica, sans-serif;
+    background: transparent;
+}
+
+.footnote {
+    clear: left;
+    color: #494B43;
+    padding-top: 20px;
+    text-align: center;
+    text-indent: 10px;
+    width: 640px;
+    font: bold 73% arial, helvetica, sans-serif;
+    background: transparent;
+}
+
+header {
+    border-width: 0;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 640px;
+    border-bottom: 2px solid #B3B9AB;
+    height: 45px;
+}
+
+caption {
+    display: none;
+}
+
+.footnote {
+    clear: left;
+    color: #800000;
+    padding-top: 20px;
+    text-align: center;
+    text-indent: 10px;
+    width: 640px;
+    font: bold 73% arial, helvetica, sans-serif;
+    background: transparent;
+}
+
+.page-header, .page-footer {
+    max-width: 695px;
+}
+
+.student-table {
+    margin-bottom: 10px;
+    margin-left: 20px;
+    margin-top: 30px;
+}
+
+.criteria {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 20px;
+    width: 180px;
+    color: #494B43;
+    font:  14px arial, helvetica, sans-serif;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 30px;
+    border-bottom: 1px solid #B3B9AB;
+    padding-right: 20px;
+    line-height: 25px;
+}
+.criteria.bold {
+    font-weight: bold;
+}
+
+.criteria-intro {
+    margin-bottom: 10px;
+}
+
+ul.criteria-list {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.alignMiddle {
+    vertical-align: middle;
+}
+
+@media print {
+    div#footer {
+        display: none;
+    }
+}
+@media screen and (-ms-high-contrast: active) {
+    .printpage-btn:before {
+        content: url("../../../images/svg_hc/hc_print.svg");
+    }
+    .printpage-btn:focus:before, .printpage-btn:hover:before {
+        content: url("../../../images/svg_hc/hc_print_hover.svg");
+    }
+}

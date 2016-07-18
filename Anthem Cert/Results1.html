@@ -1,0 +1,392 @@
+
+<!-- saved from url=(0159)https://compass.learning.cognizant.com/ELMPRD/ELearning/WellPoint_Medicare_Parts_C&D_FWA_and_GCT_September_2013/data/swf/quizmaker_330/quiz_content/report.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<title>Results</title>
+
+<script>
+var g_arrMonths = new Array()
+
+// Enter the month names below
+g_arrMonths[0] = "January"
+g_arrMonths[1] = "February"
+g_arrMonths[2] = "March"
+g_arrMonths[3] = "April"
+g_arrMonths[4] = "May"
+g_arrMonths[5] = "June"
+g_arrMonths[6] = "July"
+g_arrMonths[7] = "August"
+g_arrMonths[8] = "September"
+g_arrMonths[9] = "October"
+g_arrMonths[10] = "November"
+g_arrMonths[11] = "December"
+
+// Enter the column headers
+var g_strDateTime = "Date / Time"
+var g_strAssociateScore = "Associate Score"
+var g_strPassingScore = "Passing Score"
+var g_strResult1 = "Result"
+var g_strQuestion = "Question"
+var g_strCorrectAns = "Correct Answer"
+var g_strResult2 = "Result"
+var g_strStudentAns = "Student Answer"
+var g_strPointsAwarded = "Points Awarded"
+var g_strNeutral = "Neutral"
+var g_strCorrect = "Correct"
+var g_strIncorrect = "Incorrect"
+
+</script>
+
+<style>
+
+TD {
+	font-size:10pt;
+	font-family:arial;
+	//text-align: center;
+	width: 12.5%;
+}
+
+.CORRECT {
+	font-size:10pt;
+	font-family:arial;
+	color: #008800;
+}
+
+.INCORRECT {
+	font-size:10pt;
+	font-family:arial;
+	color: #880000;
+}
+
+.NEUTRAL {
+	font-size:10pt;
+	font-family:arial;
+	color: #000088;
+}
+
+.QUESTION {
+	font-size:10pt;
+	font-family:arial;
+	text-align: left;
+	width: 46.25%;	
+}
+
+.NUMBER {
+	font-size:10pt;
+	font-family:arial;
+	text-align: center;
+	width: 3.75%;
+}
+
+.DATE {
+	font-size:10pt;
+	font-family:arial;
+	text-align: center;
+	
+}
+
+.DATETIME {
+	font-size:10pt;
+	font-family:arial;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.SUMMARY {
+	font-size:10pt;
+	font-family:arial;
+	//text-align: center;
+}
+
+.border {     
+	border-image: url(img/border.png); 
+	} 
+
+
+H1 {
+	font-size:14pt;
+	font-family:arial;
+	//text-align: center;
+}
+
+H2 {
+	font-size:14pt;
+	font-family:arial;
+	//text-align: center;
+}
+
+TH {
+	font-size:11pt;
+	font-family:arial;
+}
+
+</style>
+
+<script>
+var g_arrResults = window.opener.g_arrResults
+var g_oQuizResults = window.opener.g_oQuizResults;
+
+function AddItem(nIdx)
+{
+	var strResult = g_strIncorrect;
+	var strClass = "INCORRECT";
+	var strCorrectResponse = "&nbsp;";
+	var strStudentResponse = "&nbsp;";
+
+	if (g_arrResults[nIdx].strCorrectResponse)
+	{
+		strCorrectResponse = g_arrResults[nIdx].strCorrectResponse;
+		
+		strCorrectResponse = strCorrectResponse.replace(/\|#\|/g,",");
+	}
+
+	if (g_arrResults[nIdx].strStudentResponse)
+	{
+		strStudentResponse = g_arrResults[nIdx].strStudentResponse;
+		strStudentResponse = strStudentResponse.replace(/\|#\|/g,",");
+	}
+
+	document.write("<TR>");
+	document.write("<TD class='NUMBER'>" + g_arrResults[nIdx].nQuestionNum + "</TD>");
+	document.write("<TD class='QUESTION'>" + g_arrResults[nIdx].strQuestion + "</TD>");
+	document.write("<TD>" + strCorrectResponse + "</TD>");
+	document.write("<TD>" + strStudentResponse + "</TD>");
+
+	if (g_arrResults[nIdx].strResult == "correct")
+	{
+		strResult = g_strCorrect;
+		strClass = "CORRECT"
+	}
+	else if (g_arrResults[nIdx].strResult == "neutral")
+	{
+		strResult = g_strNeutral
+		strClass = "NEUTRAL"
+	}
+
+	document.write("<TD class='" + strClass + "'>" + strResult + "</TD>");
+	document.write("<TD>" + g_arrResults[nIdx].nPoints + "</TD>");
+	document.write("</TR>");
+}
+
+function FormatDate(dtmDate)
+{
+	var strResult = "";
+	var nHours = dtmDate.getHours();
+	var strAM = "am";
+	var nMinutes = dtmDate.getMinutes();
+	var strMinutes = "" + nMinutes;
+
+	if (nMinutes < 10)
+	{
+		strMinutes = "0" + nMinutes;
+	}
+
+	if (nHours == 12)
+	{
+		strAM = "pm";
+	}
+
+	if (nHours > 12)
+	{
+		nHours -= 12;
+		strAM = "pm";
+	}
+	
+
+	strResult += "<P class='DATETIME'>"
+	strResult += g_arrMonths[dtmDate.getMonth()] + " ";
+	strResult += dtmDate.getDate() + ", ";
+	strResult += dtmDate.getFullYear() + "  ";
+	strResult += "</P><P class='DATETIME'>"
+	strResult += nHours + ":";
+	strResult += strMinutes + " ";
+	strResult += strAM;
+	strResult += "</P>"
+	return strResult;
+}
+
+</script>
+
+</head>
+<body bgcolor="#ffffff">
+<!--<table TABLE BORDER=1>
+    <tr>
+    <td align='left'><img src='corner-left-top.png'></td>
+    <td>sss</td>
+    <td><img src='corner-right-top.png'></td>
+    </tr>
+    <tr>
+    <td>ss</td>
+    <td>ss</td>
+    <td>ss</td>
+    </tr>
+    <tr>
+    <td><img src='corner-left-bot.png'></td>
+    <td>ss</td>
+    <td><img src='corner-right-bot.png'></td>
+    </tr>
+</table>-->
+
+<div style="width:100%;height:100%;border:6px double brown;">
+
+<p style="margin-top: 0;">&nbsp;</p><p style="margin-top: 0;">&nbsp;</p><table table="" width="100%" border="0">
+
+<!--<tr>
+<td style='text-align:left'><img border="0" width="100" height="100" src="corner_left-top.png">
+</td>-->
+
+
+<script>
+var strTitle = g_oQuizResults.strTitle;
+//document.write("<P><H1>" + strTitle + " Certificate</H1></P>");
+document.write("<tr><td style='color:#000000; font-size: 24; font-weight:bold; font-family:'Verdana;'>" + strTitle + " Certificate</td></tr>");
+
+</script><tbody><tr><td style="color:#000000; font-size: 24; font-weight:bold; font-family:" verdana;'="">WellPoint Fraud, Waste and Abuse (FWA) Certificate</td></tr>
+
+<!--<td style='text-align:right;'><img border=0  width="100" height="100" src='corner_right-top.png'></tr>-->
+
+<script>
+document.write("</table>");
+
+document.write("<TABLE WIDTH='800' BORDER=0 align='center'>");
+document.write("<tr><td>&nbsp;</td></tr>");
+document.write("<tr><td style='color:#000000;; font-style: italic; font-size: 11'>" + "2012-2013" + "</td></tr>");
+document.write("<tr><td style='color:#000000;; font-style: italic; font-size: 11'>" + "This is to certify that" + "</td></tr>");
+document.write("<tr><td>&nbsp;</td></tr>");
+
+if (g_oQuizResults.oOptions.strName)
+{
+	if (g_oQuizResults.oOptions.strName.length > 0)
+	{
+		document.write("<tr><td style='color:#000000; font-size: 20; font-weight:bold; font-family:'Verdana;'>" + g_oQuizResults.oOptions.strName + "</td></tr>");
+	}
+}
+
+document.write("<tr><td>&nbsp;</td></tr><tr><td style='color:#000000;; font-style: italic; font-size: 11'>"+"has successfully completed  the "+strTitle+" eLearning under the seal of Global Information Security" + "</td></tr>");
+
+document.write("<tr><td>" + "&nbsp;" + "</td></tr>");
+
+document.write("</table>");
+</script></tbody></table><table width="800" border="0" align="center"><tbody><tr><td>&nbsp;</td></tr><tr><td style="color:#000000;; font-style: italic; font-size: 11">2012-2013</td></tr><tr><td style="color:#000000;; font-style: italic; font-size: 11">This is to certify that</td></tr><tr><td>&nbsp;</td></tr><tr><td style="color:#000000; font-size: 20; font-weight:bold; font-family:" verdana;'="">S. Indumathi (532508)</td></tr><tr><td>&nbsp;</td></tr><tr><td style="color:#000000;; font-style: italic; font-size: 11">has successfully completed  the WellPoint Fraud, Waste and Abuse (FWA) eLearning under the seal of Global Information Security</td></tr><tr><td>&nbsp;</td></tr></tbody></table>
+
+<table width="600" border="1" bordercolor="#000000" align="center">
+	<tbody><tr>
+<script>
+	document.write("<TH>" + g_strDateTime + "</TH>");
+
+	if (g_oQuizResults.oOptions.bShowUserScore)
+	{	
+		document.write("<TH>" + g_strAssociateScore + "</TH>");
+	}
+	if (g_oQuizResults.oOptions.bShowPassingScore)
+	{
+		document.write("<TH>" + g_strPassingScore + "</TH>");
+	}
+	if (g_oQuizResults.oOptions.bShowShowPassFail)
+	{
+		document.write("<TH>" + g_strResult1 + "</TH>");
+	}
+
+</script><th>Date / Time</th><th>Associate Score</th><th>Passing Score</th><th>Result</th>
+	</tr>
+	
+	<tr>
+<script>
+	document.write("<TD class='DATE'>" + FormatDate(g_oQuizResults.dtmFinished) + "</TD>");
+
+	if (g_oQuizResults.oOptions.bShowUserScore)
+	{
+		document.write("<TD class='SUMMARY'>" + g_oQuizResults.strScore + "</TD>");
+	}
+	if (g_oQuizResults.oOptions.bShowPassingScore)
+	{
+		document.write("<TD class='SUMMARY'>" + g_oQuizResults.strPassingScore + "</TD>");
+	}
+	if (g_oQuizResults.oOptions.bShowShowPassFail)
+	{
+		var strCapResult = g_oQuizResults.oOptions.strResult;
+		strCapResult = strCapResult.substr(0,1).toUpperCase() + strCapResult.substr(1);
+		document.write("<TD class='SUMMARY'>" + strCapResult + "</TD>");
+	}
+</script><td class="DATE"><p class="DATETIME">May 18, 2016  </p><p class="DATETIME">1:58 pm</p></td><td class="SUMMARY">100</td><td class="SUMMARY">80</td><td class="SUMMARY">Completed</td>
+	</tr>
+
+</tbody></table>
+
+<script>
+	if (g_oQuizResults.oOptions.bShowQuizReview)
+	{
+
+		document.write("<TABLE WIDTH='750' BORDER=0 align='center'>");
+		/*document.write("<TR>");
+		document.write("<TH>#</TH>");
+		document.write("<TH>" + g_strQuestion + "</TH>");
+		document.write("<TH>" + g_strCorrectAns + "</TH>");
+		document.write("<TH>" + g_strStudentAns + "</TH>");
+		document.write("<TH>" + g_strResult2 + "</TH>");
+		document.write("<TH>" + g_strPointsAwarded + "</TH>");
+		document.write("</TR>");*/
+
+
+		// Sort our questions by question number
+		var arrSort = new Array();
+
+		/*if (g_arrResults.length > 0)
+		{
+			if (g_arrResults[0].bFound)
+			{
+				for (var i = 0; i < g_arrResults.length; i++)
+				{
+					g_arrResults[i].bFound = false;
+				}
+			}
+
+			for (var i = g_arrResults.length - 1; i >= 0; i--)
+			{
+				var nIndex = -1;
+				var nMaxValue = -1;
+		
+				for (var j = 0; j < g_arrResults.length; j++)
+				{
+					if (!g_arrResults[j].bFound && g_arrResults[j].nQuestionNum > nMaxValue)
+					{
+						nMaxValue = g_arrResults[j].nQuestionNum;
+						if (nIndex >= 0)
+						{
+							g_arrResults[nIndex].bFound = false;
+						}
+						g_arrResults[j].bFound = true;
+						nIndex = j;				
+					}
+				}
+				arrSort[i] = nIndex;
+			}
+
+			for (var i = 0; i < arrSort.length; i++)
+			{
+				AddItem(arrSort[i]);
+			}
+		}*/
+		//document.write("<tr><td style='text-align:right;'>" + "Signing Authority Name" + "</td></tr>");
+
+		document.write("<tr><td>&nbsp;</td></tr>");
+
+		document.write("<tr><td colspan=5 style='color:#000000;; font-style: italic; font-size: 11'>" + "This certificate is valid for one year from the date of completion" + "</td></tr>");
+
+		document.write("<tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td style='text-align:right;'><img border='0' width='84' height='85' src='gis-logo.jpg'></td></tr>")
+
+		document.write("<tr><td colspan=4 style='text-align:right;'><img border='0' width='118' height='40' src='signature.jpg'></td><td>&nbsp;</td></tr>");
+
+		document.write("</TABLE>");
+	}
+
+</script><table width="750" border="0" align="center"><tbody><tr><td>&nbsp;</td></tr><tr><td colspan="5" style="color:#000000;; font-style: italic; font-size: 11">This certificate is valid for one year from the date of completion</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td style="text-align:right;"><img border="0" width="84" height="85" src="./Results1_files/gis-logo.jpg"></td></tr><tr><td colspan="4" style="text-align:right;"><img border="0" width="118" height="40" src="./Results1_files/signature.jpg"></td><td>&nbsp;</td></tr></tbody></table>
+<p style="margin-top: 0;">&nbsp;</p>
+<!--<table TABLE WIDTH='100%' BORDER=0>
+<tr>
+<td style='text-align:left;'><img border="0" width="100" height="100" src="corner_left-bot.png"></td>
+<td style='text-align:right;'><img border="0" width="100" height="100" src="corner_right-bot.png"></td>
+</tr>-->
+</div>
+
+</body></html>
